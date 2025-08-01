@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Esto es una pagina de prueba para aprender html con el curso de midudev">
+        <meta property="og:title" content="Titulo de la pagina">
+        <meta property="og:description" content="Esto es una pagina de prueba para aprender html con el curso de midudev">
+        <meta property="og:image" content="/images/lee sin skt.png">
+        <meta property="og:image:alt" content="texto que aparece si no se puede cargar la imagen">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#09f">
+        <meta http-equiv="X-Frame-Options" content="DENY">
+
+        <link rel="alternate" href="https://ejemplo/en" hreflang="es-ES">
+        <link rel="canonical" href="https://midu.dev">
+        <link rel="icon" type="image/png" href="/images/lee sin skt.png">
+        <link rel="stylesheet" href="style.css">
+
+        <title>Titulo de la pagina</title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <h1>
+                PortFolio de Javier
+            </h1>
+            <nav>
+                <a class="link" href="#experiencia">Experiencia</a>
+                <a class="link" href="#tecnologia">Tecnologia</a>
+                <a class="link" id="twitchLink" href="https://www.twitch.tv/tempurottv" target="_blank" rel="noreferrer">TWITCH</a>
+            </nav>
+        </header>
+        
+        <dialog id="idModal">
+            <h2>Esto es una modal</h2>
+            <p>skdbfksdbfskdfb</p>
+            <button id="closeModal">cerrar modal</button>
+        </dialog>
+        <button id="openModal">abrir modal</button>
+        <script>
+            window.openModal.addEventListener('click', ()=>{
+                window.idModal.showModal()
+            })
+            window.closeModal.addEventListener('click', ()=>{
+                window.idModal.close()
+            })
+        </script>
+        
+        <main>
+            <p class="parrafo1">
+                Esto es un parrafo <strong class="strong1">Esto esta en negrita</strong>
+            </p>
+
+            <video controls autoplay loop src="https://filesamples.com/samples/video/mp4/sample_960x400_ocean_with_audio.mp4"></video>
+
+            <iframe style="width:100%; aspect-ratio: 16/9" 
+            src="https://www.youtube.com/embed/3nYLTiY5skU?start=6339" 
+            title="Youtube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+            </iframe>
+
+            <audio controls src="https://download.samplelib.com/mp3/sample-15s.mp3"></audio>
+
+            <details open>
+                <summary>Que estudios tienes?</summary>
+                <p class="pHover">Ninguno soy peruano</p>
+            </details>
+            <details>
+                <summary>De donde eres?</summary>
+                <p class="pHover2Outline">Tribu tikitiki</p>
+            </details>
+
+            <h2 id="experiencia">Experiencia: </h2>
+            <ul>
+                <li class="item-experiencia">Inetum -> 18-20</li>
+                <li class="item-experiencia">SopraSteria -> 24-25</li>
+                <li class="item-experiencia">CaixaBankTech -> 25-25</li>
+            </ul>
+
+            <a download href="/images/lee sin skt.png">
+            <img 
+                loading="lazy"
+                id="leesin-img"
+                width=250
+                height=200
+                title="Texto que aparece cuando pones el mouse encima de la img" 
+                alt="Este texto aparece si la img no carga" 
+                src="/images/lee sin skt.png">
+            </a>
+            <br>
+
+            <input type="datetime-local">
+
+            <section class="sectionFlex">
+                <div class="flexDiv">div 1</div>
+                <div class="flexDiv">div 2</div>
+                <div class="flexDiv">div 3</div>
+            </section>
+
+            <aside>
+                <header>
+                    <h3>Mis tecnologías favoritas</h3>
+                </header>
+                <ol type="A" reversed start="C">
+                    <li class="lista-tecnologias">java</li>
+                    <li class="lista-tecnologias">html</li>
+                    <li class="lista-tecnologias">js</li>
+                </ol>
+            </aside>
+
+            <p class="lorem1">Lorem ipsum dolor <strong class="bold">sit</strong>, amet consectetur adipisicing elit. Eius est quo aperiam harum autem! Itaque ex blanditiis qui maiores dignissimos illum, officia, magnam ducimus expedita ipsam, eligendi veritatis molestias unde.</p>
+            <p class="lorem2">Lorem ipsum dolor <strong class="bold">sit</strong>, amet consectetur adipisicing elit. Eius est quo aperiam harum autem! Itaque ex blanditiis qui maiores dignissimos illum, officia, magnam ducimus expedita ipsam, eligendi veritatis molestias unde.</p>
+
+            <article>
+                <p>p dentro de un article</p>
+                <p>p dentro de un article</p>
+                <footer>
+                    <p>p dentro de un footer dentro de un article</p>
+                </footer>
+            </article>
+
+            <article>
+                <p>Texto en negrita</p>
+                <b>Otro texto en negrita</b>
+                <p>Segundo párrafo</p>
+                <h1>texto de relleno</h1>
+                <b>Texto en negrita después del segundo párrafo</b>
+            </article>
+
+            <article>
+                <p>Este es un párrafo</p>
+                <b>Este es un b justo después del p</b>
+                <p>Otro párrafo</p>
+                <strong>Este es un strong justo después del p<br></strong>
+                <b>Este b NO se selecciona porque no está justo después de un p</b>
+            </article>
+
+            <section>
+                <h4 id="tecnologia">Tecnología</h4>
+                <article>
+                    <header>
+                        <h5>Noticia 1 de tecnologia</h5>
+                    </header>
+                    <p>Texto noticia 1 de tecnologia</p>
+                    <footer>
+                        <small>Footer noticia 1 de tecnologia</small>
+                    </footer>
+                </article>
+                <article>
+                    <header>
+                        <h5>Noticia 2 de tecnologia</h5>
+                    </header>
+                    <p>Texto noticia 2 de tecnologia</p>
+                    <footer>
+                        <small>Footer noticia 2 de tecnologia</small>
+                    </footer><br>
+                </article>
+
+            <section class="parent">
+                <div class="containerParent"></div>
+            </section>
+            <section class="parent">
+                <div class="containerParent"></div>
+            </section>
+            <section class="parent">
+                <div class="containerParent"></div>
+            </section>
+
+            <section class="indexSection">
+                <div class="indexDiv">div 2</div>
+                <div class="indexDiv">div 3</div>
+                <div class="indexDiv">div 1</div>
+            </section>
+
+            <!-- EL SPAN ES UN ELEMENTO EN LINEA Y EL DIV UN ELEMENTO EN BLOQUE,
+             LOS ELEMENTOS EN LINEA NO FUNCIONAN EL WIDTH Y HEIGHT, PERO SI A UN ELEMENTO
+             EN LINEA LE PONES DISPLAY: BLOCK; FUNCIONA -->
+            <span class="spanLinea" style="background: orange;">Soy un span (en línea)</span>
+            <div class="divBloque" style="background: lightblue;">Soy un div (en bloque)</div>
+            <section class="container">MODELO DE LA CAJA</section>
+            <section class="container2">MODELO DE LA CAJA</section>
+            <section class="container3">CSS IS AWESOME</section>
+
+            </section>
+
+            <section class="sectionAR">
+                <div class="containerAR"></div>
+            </section>
+
+            
+
+            <section>
+                <h2>Formulario de contacto</h2>
+
+                <form method="post" action="/">
+                    <fieldset>
+                        <legend>Informacion Personal</legend>
+                        <label for="name">Nombre: </label>
+                        <input type="text" id="name" name="name" placeholder="Javier Carceles" required pattern="[A-Za-z\s]+">
+                    </fieldset>
+                    <input type="submit" value="enviar datos">
+                </form>
+
+                <form method="post" action="/">
+                    <div>
+                        <datalist id="languages">
+                            <option value="Js">Js</option>
+                            <option value="Python">Py</option>
+                            <option value="Java">Java</option>
+                        </datalist>
+                        <label>
+                            Con que lenguaje te sientes mas comodo?
+                            <input list="languages" name="languages">
+                        </label>
+                    </div>
+                </form>
+
+            </section>
+
+        </main>
+        <footer>
+            Copyright de mi pagina UwU
+            <a href="mailto:javiercarceles@outlook.es">Enviame un correo</a>
+            <a href="tel:+34618811769">Llamar por telefono</a>
+            <a href="https://wa.me/34618811769?text=Hola%20Javier">Escríbeme a WhatsApp</a>
+        </footer>
+    </body>
+</html>

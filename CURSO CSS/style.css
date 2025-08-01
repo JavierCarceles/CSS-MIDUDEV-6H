@@ -1,0 +1,269 @@
+/*ETIQUETA HTML*/
+h1{
+    color: rgb(50 200 250 / 50%);
+    border-width: 3px;  /*Pone el borde de la casilla h1 con anchura*/
+    border-style: solid; /*Muestra el color del borde*/
+    border-color: currentColor; /*Muestra el borde del color que tenga puesto el texto*/
+}
+
+/*CLASS*/
+.link{
+    color: red;
+}
+
+/*ID*/
+#openModal{
+    color: black;
+    background-color: orange;
+    border: 0;
+}
+
+/*Carga una fuente para estilar el texto de la pagina, si no puede cargar pasa a la siguiente y asi hasta la ultima de la derecha que esta siempre*/
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.parrafo1{
+    font-size: 32px;
+    border: 3px solid brown;
+}
+
+/*El borde no se hereda de una clase padre, pero con inherit le puedes decir que fuerce la herencia*/
+/*Arriba le dices que herede las propiedades del padre, pero con initial le dices que tenga el valor por defecto*/
+.strong1{
+    border: inherit;
+    font-size: initial;
+}
+
+/*Al mantener el raton encima se aplican los cambios*/
+.pHover:hover{
+    border: 3px solid red;
+    color: green;
+}
+
+/*El outline es el contorno que se dibuja al rededor del elemento
+por lo que alterarlo no hace que se mueva el elemento como si pasa con el border del pHover*/
+.pHover2Outline:hover{
+    outline: 3px solid red;
+}
+
+/*El active es para aplicar cambios al tener el click apretando sobre el elemento*/
+#twitchLink:active{
+    color: blue;
+}
+
+/*Para inputs donde haces click para escribir por ejemplo, al estar con el focus ahi se aplican los cambios*/
+#name:focus{
+    background-color: blue;
+}
+
+/*Con el first/last child aplicas cambios solo al primer/ultimo elemento de los que elijas
+en este caso el first child de los elementos li que tienen la class lista-tecnologias*/
+.lista-tecnologias:first-child{
+    color: pink;
+}
+.lista-tecnologias:last-child{
+    color: purple;
+}
+
+/*Selectores combinados, para poder referirse a un elemento que se repita pero que tenga un padre
+con alguna class o id diferente*/
+.lorem1 .bold{
+    color: red;
+}
+.lorem2 .bold{
+    color: orange;
+}
+
+/*Para afectar a hijos directos de un elemento usas >, en este caso sin la >
+todos los p dentro de article se afectarian, pero con la > solo se afectan los
+p que sean hijos directos de article*/
+article{
+    background-color: grey;
+}
+/*INCORRECTO, porque se aplica a todos los p dentro de article, no solo al primero
+article p{
+    color: yellow;
+}*/
+article > p{
+    color: yellow;
+}
+
+/*Lo mismo pasa con el ~ que es el operador de hermano siguiente 
+y te dice que se apliquen cambios cuando b esté a continuación 
+de un p, pero que puede haber otros elementos entre ellos*/
+p ~ b {
+    color: blue;
+}
+
+/*Para que sea un hermano inmediato se usa el + así si tienes elementos
+entre medias de los dos, no se aplican los estilos*/
+p + b {
+    background-color: yellow;
+}
+
+/*display: block; Para que el span se comporte como un bloque y pueda tener width y height
+    El span por defecto tiene display: inline; por lo que no funciona el width y height*/
+.spanLinea{
+    width: 200px;
+    height: 50px;
+    background-color: orange;
+}
+
+/*El div por defecto tiene display: block; por lo que si funciona el width y height*/
+.divBloque{
+    width: 500px;
+    height: 50px;
+    background-color: lightblue;
+}
+
+/*En el f12 puedes ver los estilos aplicados al elemento, y el modelo de la caja.
+Los 100px son el ancho y alto del contenido, luego 10px de padding, 40px de margin y 5px de border*/
+.container{
+    color: white;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: 5px solid red;
+    margin: 40px;
+}
+
+/*Si te viene un diseñador y te pide que la caja sea de 160px, padding de 7px, borde de 3px y margin de 16px, en la caja de antes
+si pones todo eso, al final el total se sumará
+porque por defecto el box-sizing es content-box, que hace que el ancho y alto solo incluyan el contenido y el padding, pero no el border ni el margin
+Entonces cambiando el box-sizing a border-box, el ancho y alto incluirán el padding y el border, pero no el margin, porque el margin es una distancia como
+calculada desde fuera de la caja*/
+.container2{
+    color: white;
+    background-color: green;
+    width: 160px;
+    height: 160px;
+    padding: 7px;
+    border: 3px solid red;
+    margin: 16px;
+    box-sizing: border-box; 
+}
+
+/*En este caso miraremos el desbordamiento, por defecto el overflow tiene el valor VISIBLE
+pero puedes ponerlo en HIDDEN para ocultar el contenido que se desborda, pero no podrías acceder a el
+o ponerlo SCROLL para que automaticamente aparezca una barra de desplazamiento, o ponerlo AUTO y ya
+el mismo dependiendo del navegador o dispositivo dictaminará si se necesita mostrar la barra de desplazamiento*/
+.container3{
+    font-size: 20px;
+    color: white;
+    background-color: green;
+    width: 80px;
+    height: 100px;
+    padding: 7px;
+    border: 3px solid red;
+    margin: 16px;
+    box-sizing: content-box; 
+    overflow: hidden; /*Si pones scroll pero el contenido no se desborda, no funcionará la barra de desplazamiento*/
+    text-overflow: ellipsis; /*Si el texto es muy largo y no cabe, se pondrá ... al final*/
+}
+
+/*POSITION ABSOLUTE, hará que los siguientes atributos top/left/bottom/right: Xpx; busquen su elemento
+mayor con POSITION RELATIVE, para usarlo de referencia, si no hay ninguno usará de referencia la pagina entera.
+con POSITION: FIXED se quedará fijo en la pantalla, incluso si se hace scroll*/
+.sectionAR{
+    background-color: gray;
+    border: 3px solid red;
+    width: 300px;
+    height: 300px;
+    margin: 16px;
+    position: relative;
+}
+/*.containerAR{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+}*/
+/*SI QUIERES CENTRAR UN ELEMENTO POR EJEMPLO QUE APARECERÁ POR ENCIMA DE LA PAGINA
+PUEDES USAR INSET: 0; Y MARGIN: AUTO; */
+.containerAR{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: absolute;
+    inset: 0; 
+    margin: auto;
+}
+
+/*Con el position: sticky; los elementos se comportan de manera diferente, se quedan "pegajosos" en su contenedor
+cuando se hace scroll, pero solo dentro de su contenedor padre*/
+.parent{
+    background-color: rgb(105, 221, 245);
+    border: 3px solid rgb(245, 108, 108);
+    width: 80px;
+    height: 250px;    
+}
+.containerParent{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: sticky;
+    top: 0;
+}
+/*Esto es solo estetica, ni caso*/
+article + section.parent {
+    margin-top: 20px;
+}
+
+/*position relative/absolute/fixed/sticky permite que los elementos usen Z-INDEX para apilarse
+por defecto el valor de z-index es 0*/
+.indexDiv{
+    border: 1px solid;
+    opacity: .9;
+    width: 200px;
+    height: 200px;
+    margin-top: -50px;
+    box-shadow: 0 0 5px #0000dd;
+    position: relative;/*Si comentas esto, el z-index del div amarillo no funcionará*/
+}
+/*Cuanto mas grande el numero mas "cerca" de la pantalla, es decir que un
+z-index 2 se verá por encima de un z-index 1*/
+.indexDiv:first-child{
+    background: yellow;
+    z-index: 1;
+}
+.indexDiv:last-child{
+    background: red;
+    z-index: 2;
+}
+/*El nth-child(2) usa para seleccionar el segundo hijo de un elemento*/
+.indexDiv:nth-child(2) {
+    background-color: #09f;
+    z-index: 3;
+}
+
+/*La etiqueta div es un elemento en bloque, así que por defecto su display es block
+pero si le pones display inline se colocará en linea pero dejará de hacer caso al ancho y alto
+porque los elementos en linea no respetan el ancho y alto que les pongas sino al tamaño de su contenido
+.flexDiv{
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    background: greenyellow;
+    display: inline;
+} Si quieres ver este codigo comenta de la 258-266 y descomenta este*/
+
+.sectionFlex{
+    display: flex;
+    flex-direction: row;/*Aqui puedes poner row, column, y row/column-reverse*/
+    flex-wrap: nowrap;/*Con el nowrap le dices que el contenido no debe tener salto de linea, y que se las apañe como pueda
+                      para que quepa en una linea, haciendo que haga cada item mas pequeño, si por el contrario
+                      le pones wrap le permites hacer un salto de linea cuando un elemento no quepa*/
+    width: 300px;
+}
+.flexDiv{
+    border: 1px solid red;
+    width: 200px; /*Aqui le dices que cada div sea de 200 de ancho, pero como tiene el nowrap, en las herramientas
+                  verás que pone cada div de 100px para que sean 300px en total, si le pusieras wrap, cada div tendría el ancho que 
+                  le toca y se colocarían en vertical*/
+    height: 100px;
+    background: greenyellow;
+}
