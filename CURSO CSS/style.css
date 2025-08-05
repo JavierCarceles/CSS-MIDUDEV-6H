@@ -253,17 +253,79 @@ porque los elementos en linea no respetan el ancho y alto que les pongas sino al
 
 .sectionFlex{
     display: flex;
-    flex-direction: row;/*Aqui puedes poner row, column, y row/column-reverse*/
-    flex-wrap: nowrap;/*Con el nowrap le dices que el contenido no debe tener salto de linea, y que se las apañe como pueda
-                      para que quepa en una linea, haciendo que haga cada item mas pequeño, si por el contrario
-                      le pones wrap le permites hacer un salto de linea cuando un elemento no quepa*/
-    width: 300px;
+    flex-direction: row;/*Aquipuedesponer row,column,y row/column-reverse*/
+    flex-wrap: nowrap;
+    /*Con el nowrap le dices que el contenido no debe tener salto de linea, y que se las apañe como pueda para que quepa en una linea, haciendo que haga cada item mas pequeño, 
+    si por el contrario le pones wrap le permites hacer un salto de linea cuando un elemento no quepa*/
+    width: 600px;
 }
 .flexDiv{
     border: 1px solid red;
-    width: 200px; /*Aqui le dices que cada div sea de 200 de ancho, pero como tiene el nowrap, en las herramientas
-                  verás que pone cada div de 100px para que sean 300px en total, si le pusieras wrap, cada div tendría el ancho que 
-                  le toca y se colocarían en vertical*/
+    width: 200px;
+    /*Aqui le dices que cada div sea de 200 de ancho,pero como tiene el nowrap,enlasherramientasverásqueponecadadivde100pxparaquesean300pxentotal,silepusieraswrap,cadadivtendríaelanchoqueletocaysecolocaríanenvertical*/
     height: 100px;
     background: greenyellow;
+}
+
+.sectionFlex2 {
+    margin-top: 10px;
+    border: 3px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: border-box;
+    width: 300px;/*Prueba de hacerlo mas ancho y veras como se adapta*/
+}
+.flexDiv2{
+    border: 2px solid red;
+    height: 20px;
+    width: 90px; /*Aqui le esas diciendo que tengan 50px cada elemento
+                 pero como tienes el nowrap y los 3 atributos en automatico, puede reducir 
+                 el tamaño de cada elemento para que quepa en los 100px que le dices que mida el padre*/
+    background: purple;
+    color: white;
+    /*En este caso tienes un contenedor con 3 elementos que no ocupan todo el espacio.
+    esto es porque por defecto estan estas 3 propiedades con valores automaticos
+    flex-grow: 0; -> los elementos no crecen
+    flex-shrink: 1; -> los elementos pueden reducir su tamaño
+    flex-basis: auto; -> el tamaño base de los elementos es automatico, es decir, el tamaño del contenido
+    Estos 3 atributos se pueden simplificar con flex: initial;
+    flex-grow: 1; Le permites crecer
+    flex-shrink: 1; le permites encogerse
+    flex-basis: auto; tamaño de cada elemento segun su contenido
+
+    El flex auto es lo mismo que grow en 1, shrink en 1 y basis en auto*/
+    flex:auto;
+    
+    /*Con el flex: 1; le dices que crezca, se encoja y tenga un tamaño igual para todos los elementos
+    flex: 1;*/
+    
+}
+
+.sectionFlex3{
+    width: 500px;
+    background-color: gray;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.flexDiv3{
+    flex-wrap: nowrap;
+    width: 30px;
+    height: 50px;
+    border: 1px solid yellow;
+    color: white;
+    flex: 1;
+    box-sizing: border-box;
+}
+/*Aqui le dices que el primer hijo por defecto tendrá flex 1 como
+pone en el flexDFiv3 de arriba, el segundo hijo tendrá el doble y el ultimo
+tendra 4 veces mas, siempre refiriendose al tamaño base flex 1*/
+.flexDiv3:first-child{
+    background-color: rgb(77, 156, 247);
+}
+.flexDiv3:nth-child(2){
+    flex: 2;
+}
+.flexDiv3:last-child{
+    flex: 4; 
 }
